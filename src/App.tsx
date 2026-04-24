@@ -40,10 +40,21 @@ const summary =
   'Product Manager with experience building AI-powered and analytics-driven products across B2B SaaS and FinTech. Led roadmap execution, LLM-based workflow intelligence, and cross-functional delivery to drive 70% feature adoption, reduce backlog by 41%, and support $10M+ projected revenue impact.';
 
 const impactStats = [
-  { value: '70%', label: 'Feature Adoption' },
-  { value: '41%', label: 'Backlog Reduction' },
-  { value: '$10M+', label: 'Projected Revenue Impact' },
-  { value: '95%', label: 'Advisor Platform Adoption' },
+  {
+    eyebrow: 'FEATURE ADOPTION',
+    value: '70%',
+    detail: 'Early feature adoption',
+  },
+  {
+    eyebrow: 'BACKLOG REDUCTION',
+    value: '41%',
+    detail: 'Backlog volume improvement',
+  },
+  {
+    eyebrow: 'REVENUE IMPACT',
+    value: '$10M+',
+    detail: 'Projected annual impact',
+  },
 ];
 
 const experience: ExperienceItem[] = [
@@ -272,56 +283,83 @@ function App() {
       <section id="hero" className="bg-cream pb-20 pt-32">
         <div className="mx-auto max-w-6xl px-6">
           <div
-            className={`grid items-center gap-16 lg:grid-cols-[1.2fr_0.8fr] ${
+            className={`${
               isVisible
                 ? 'translate-y-0 opacity-100'
                 : 'translate-y-8 opacity-0'
-            } transform transition-all duration-1000`}
+            } transform text-center transition-all duration-1000`}
           >
-            <div>
-              <div className="mb-10 inline-flex items-center gap-2 border border-brown/20 px-6 py-4 text-xs uppercase tracking-[0.38em] text-brown">
+            <div className="mx-auto max-w-4xl">
+              <div className="mb-10 flex justify-center">
+                <div className="h-28 w-28 overflow-hidden rounded-full border-4 border-white shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+                  <img
+                    src="/images/image.png"
+                    alt="Lavanya Krishnatra"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <h1 className="mb-6 text-5xl font-display leading-[1] tracking-wide text-black md:text-6xl xl:text-[4.9rem]">
+                Lavanya Krishnatra
+              </h1>
+
+              <p className="mb-2 text-lg font-light uppercase tracking-[0.32em] text-brown md:text-xl">
+                Product Manager | AI &amp; Product Analytics
+              </p>
+
+              <p className="text-sm uppercase tracking-[0.35em] text-brown/80">
+                USA
+              </p>
+
+              <div className="mx-auto my-4 h-0.5 w-20 bg-brown/70" />
+
+              <div className="mb-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-brown">
                 <TrendingUp className="h-4 w-4" />
                 AI, Product Analytics, B2B SaaS, FinTech
               </div>
-              <h1 className="mb-8 text-6xl font-display leading-[0.95] tracking-wide text-black md:text-7xl xl:text-[5.25rem]">
-                Lavanya Krishnatra
-              </h1>
-              <p className="mb-8 max-w-4xl text-xl font-light uppercase tracking-[0.28em] text-brown md:text-2xl">
-                Product Manager | AI &amp; Product Analytics
-              </p>
-              <p className="mb-14 max-w-4xl text-lg leading-[1.8] text-brown md:text-[1.1rem]">
+
+              <p className="mx-auto mb-12 max-w-4xl text-lg leading-[1.9] text-brown md:text-[1.08rem]">
                 {summary}
               </p>
 
-              <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <button
+                  onClick={() => scrollToSection('experience')}
+                  className="min-w-[170px] bg-black px-8 py-4 text-sm tracking-[0.08em] text-white transition hover:bg-brown"
+                >
+                  VIEW EXPERIENCE
+                </button>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="min-w-[140px] border border-black px-8 py-4 text-sm tracking-[0.08em] text-black transition hover:bg-black hover:text-white"
+                >
+                  CONTACT
+                </button>
+              </div>
+
+              <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-3">
                 {impactStats.map((stat) => (
                   <div
-                    key={stat.label}
-                    className="min-h-[170px] border border-brown/10 bg-white px-8 py-10"
+                    key={stat.eyebrow}
+                    className="border border-brown/10 bg-white px-8 py-6 shadow-sm"
                   >
-                    <div className="mb-3 text-3xl font-display text-black md:text-4xl">
+                    <div className="mb-3 text-xs uppercase tracking-[0.28em] text-brown/70">
+                      {stat.eyebrow}
+                    </div>
+                    <div className="mb-2 text-4xl font-display text-black">
                       {stat.value}
                     </div>
-                    <div className="text-sm uppercase leading-snug tracking-[0.22em] text-brown/80">
-                      {stat.label}
+                    <div className="text-sm text-brown/80">
+                      {stat.detail}
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-
-            <div className="mx-auto w-full max-w-xl">
-              <div className="relative overflow-hidden border border-brown/10 bg-white p-6 shadow-[0_18px_40px_rgba(0,0,0,0.06)]">
-                <img
-                  src="/images/image.png"
-                  alt="Lavanya Krishnatra"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-10 text-center">
             <ChevronDown
               className="mx-auto h-6 w-6 cursor-pointer animate-bounce text-brown/60 transition-colors hover:text-black"
               onClick={() => scrollToSection('summary')}
