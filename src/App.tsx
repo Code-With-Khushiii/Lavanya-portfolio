@@ -272,61 +272,46 @@ function App() {
       <section id="hero" className="bg-cream pb-20 pt-32">
         <div className="mx-auto max-w-6xl px-6">
           <div
-            className={`grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] ${
+            className={`grid items-center gap-16 lg:grid-cols-[1.2fr_0.8fr] ${
               isVisible
                 ? 'translate-y-0 opacity-100'
                 : 'translate-y-8 opacity-0'
             } transform transition-all duration-1000`}
           >
             <div>
-              <div className="mb-5 inline-flex items-center gap-2 border border-brown/20 px-4 py-2 text-xs uppercase tracking-[0.35em] text-brown">
+              <div className="mb-10 inline-flex items-center gap-2 border border-brown/20 px-6 py-4 text-xs uppercase tracking-[0.38em] text-brown">
                 <TrendingUp className="h-4 w-4" />
                 AI, Product Analytics, B2B SaaS, FinTech
               </div>
-              <h1 className="mb-5 text-5xl font-display tracking-wide text-black md:text-6xl">
+              <h1 className="mb-8 text-6xl font-display leading-[0.95] tracking-wide text-black md:text-7xl xl:text-[5.25rem]">
                 Lavanya Krishnatra
               </h1>
-              <p className="mb-4 text-lg font-light uppercase tracking-[0.22em] text-brown md:text-xl">
+              <p className="mb-8 max-w-4xl text-xl font-light uppercase tracking-[0.28em] text-brown md:text-2xl">
                 Product Manager | AI &amp; Product Analytics
               </p>
-              <p className="mb-8 max-w-3xl text-lg leading-relaxed text-brown">
+              <p className="mb-14 max-w-4xl text-lg leading-[1.8] text-brown md:text-[1.1rem]">
                 {summary}
               </p>
 
-              <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
                 {impactStats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="border border-brown/15 bg-white p-5 shadow-sm"
+                    className="min-h-[170px] border border-brown/10 bg-white px-8 py-10"
                   >
-                    <div className="mb-1 text-3xl font-display text-black">
+                    <div className="mb-3 text-3xl font-display text-black md:text-4xl">
                       {stat.value}
                     </div>
-                    <div className="text-sm uppercase tracking-[0.18em] text-brown/80">
+                    <div className="text-sm uppercase leading-snug tracking-[0.22em] text-brown/80">
                       {stat.label}
                     </div>
                   </div>
                 ))}
               </div>
-
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <button
-                  onClick={() => scrollToSection('experience')}
-                  className="bg-black px-8 py-4 text-sm tracking-[0.25em] text-white transition hover:bg-brown"
-                >
-                  VIEW EXPERIENCE
-                </button>
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="border border-black px-8 py-4 text-sm tracking-[0.25em] text-black transition hover:bg-black hover:text-white"
-                >
-                  CONTACT
-                </button>
-              </div>
             </div>
 
-            <div className="mx-auto w-full max-w-md">
-              <div className="relative overflow-hidden border border-brown/15 bg-white p-4 shadow-xl">
+            <div className="mx-auto w-full max-w-xl">
+              <div className="relative overflow-hidden border border-brown/10 bg-white p-6 shadow-[0_18px_40px_rgba(0,0,0,0.06)]">
                 <img
                   src="/images/image.png"
                   alt="Lavanya Krishnatra"
